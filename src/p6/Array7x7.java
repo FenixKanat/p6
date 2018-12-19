@@ -64,7 +64,7 @@ public class Array7x7 {
 	public Array7 getCol(int col) {
 		Array7 arr = new Array7();
 		for(int i = 0; i < this.elements[0].length; i++) {
-			arr.setElement(this.elements[col][i], i);
+			arr.setElement(i, this.elements[col][i]);
 		}
 		return arr;
 	}
@@ -97,6 +97,70 @@ public class Array7x7 {
 	**/
 	public int[][] toIntArray(){
 		return this.elements;
+	}
+	
+	/**
+	  Shifts array towards left by 1 step
+	 **/
+	public void shiftLeft() {
+		// SAVE FIRST COLUMN BEFORE SHIFTING
+		int[] temp = new int[7];
+		for(int i = 0; i < 7;i++) {
+			temp[i] = this.elements[i][0];
+		}
+		
+		// SHIFT ARRAY (1 STEP) TO LEFT
+		for (int i = 0; i < temp.length-1; i++) {
+			for (int j = 0; j < temp.length; j++) {
+				this.elements[j][i] = this.elements[j][i+1];
+			}
+		}
+		
+		// SET FIRST COLUMN TO LAST COLUMN
+		for (int j = 0; j < temp.length; j++) {
+			this.elements[j][temp.length-1] = temp[j];
+		}
+		
+		// PRINT SHIFTED ARRAY
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp.length; j++) {
+				System.out.print(this.elements[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
+	/**
+	  	Shifts array towards right by 1 step
+	 **/
+	public void shiftRight() {
+		// SAVE LAST COLUMN BEFORE SHIFTING
+		int[] temp = new int[7];
+		for(int i = 0; i < 7;i++) {
+			temp[i] = this.elements[i][this.elements.length-1];
+		}
+		
+		// SHIFT ARRAY 
+		for (int i = temp.length-1; i > 0; i--) {
+			for (int j = temp.length-1; j >= 0; j--) {
+				this.elements[j][i] = this.elements[j][i-1];
+			}
+		}
+		
+		// SET LAST COLUMN TO FIRST COLUMN
+		for (int j = temp.length-1; j >= 0; j--) {
+			this.elements[j][0] = temp[j];
+		}
+		
+		// PRINT SHIFTED ARRAY
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp.length; j++) {
+				System.out.print(this.elements[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 
 }

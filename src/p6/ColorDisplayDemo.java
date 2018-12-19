@@ -60,15 +60,15 @@ public class ColorDisplayDemo extends JPanel {
 	private class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==btnR) {
-				controller.showR();
+			//	controller.showR();
 			} else if(e.getSource()==btnA) {
-				controller.showA();
+			//	controller.showA();
 			}else if(e.getSource()==btnRandomColors) {
-				controller.showRandom();
+			//	controller.showRandom();
 			} else if(e.getSource()==btnTimer) {
-				controller.useTimer();
+			//	controller.useTimer();
 			} else if(e.getSource()==btnFadeOut) {
-				controller.fadeOut();
+			//	controller.fadeOut();
 			}
 		}		
 	}
