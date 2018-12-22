@@ -1,11 +1,10 @@
-package p6;
+ package p6;
 
 public class Array7 {
 
 	private int[] elements;
 	
 	public Array7() {
-		
 		// give this.element an array with 7 0s
 		this.elements = new int[7];
 	}
@@ -79,7 +78,4 @@ public class Array7 {
 	public int getElement(int pos) {
 		return this.elements[pos];
 	}
-	
-	
-	
 }

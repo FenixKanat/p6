@@ -13,7 +13,6 @@ public class Array7x7 {
 
 	/**
 		Takes the value of given <code>value</code> and sets it to given position in array
-
 		@param row - Array row
 		@param col - Array column
 	**/
@@ -22,7 +21,6 @@ public class Array7x7 {
 	}
 
 	/**
-
 		@return - specific element at given position (<code>row</code>,<code>column</code>)
 		@param row - takes a row index
 		@param col - takes a col index
@@ -54,7 +52,7 @@ public class Array7x7 {
 	**/
 	public void setCol(int col, Array7 theCol) {
 		for(int i = 0; i < theCol.toIntArray().length; i++) {
-			this.elements[col][i] = theCol.getElement(i);
+				this.elements[i][col] = theCol.getElement(i);
 		}
 	}
 
@@ -64,7 +62,7 @@ public class Array7x7 {
 	public Array7 getCol(int col) {
 		Array7 arr = new Array7();
 		for(int i = 0; i < this.elements[0].length; i++) {
-			arr.setElement(i, this.elements[col][i]);
+			arr.setElement(i,this.elements[i][col]);
 		}
 		return arr;
 	}
@@ -84,7 +82,6 @@ public class Array7x7 {
 	public void setArray(int[][] array) {
 		this.elements = array;
 	}
-
 	/**
 		@return a copy of itself
 	**/
@@ -98,6 +95,7 @@ public class Array7x7 {
 	public int[][] toIntArray(){
 		return this.elements;
 	}
+
 	
 	/**
 	  Shifts array towards left by 1 step
@@ -162,5 +160,5 @@ public class Array7x7 {
 		}
 		System.out.println();
 	}
-
+	
 }
